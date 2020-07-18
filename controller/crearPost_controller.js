@@ -2,9 +2,9 @@ const db = require('../models');
 
 async function crearPost (req, res) {
    try{
-    const prueba = req.body;
+    const post = req.body;
     
-        const crearPost = await db.Post.create(req.body);
+        const crearPost = await db.Post.create(post);
         res.status(200).json({
             message:'se ha creado correctamente'
         })
