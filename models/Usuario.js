@@ -44,6 +44,7 @@ module.exports = (sequelize, DataTypes) => {
  {tableName: 'usuarios'});
  Usuario.associate = (models) => {
      Usuario.hasMany(models.Post, {foreignKey: 'id_usuario'});
+     Usuario.belongsToMany(models.Post, { through: models.Like })
     //  Producto.hasMany(models.Pedido, {foreignKey: 'producto_id'});
  }
     return Usuario;

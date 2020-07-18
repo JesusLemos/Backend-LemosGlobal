@@ -21,6 +21,11 @@ module.exports =(sequelize, DataTypes) => {
         },
      } ,
  {tableName: 'posts'});
+ Post.associate = (models) => {
+    // Post.hasMany(models.Post, {foreignKey: 'id_Post'});
+    Post.belongsToMany(models.Usuario , { through: models.Like })
+   //  Producto.hasMany(models.Pedido, {foreignKey: 'producto_id'});
+}
     return Post;
 
 }
