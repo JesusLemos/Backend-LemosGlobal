@@ -5,8 +5,10 @@ var router = express.Router();
 const crearPost = require('../controller/crearPost_controller');
 const leerPost = require('../controller/leerPost_controller');
 const actualizarPost = require('../controller/actualizarPost_controller');
+const borrarPost = require('../controller/borrarPost_controller');
 
 router.get('/leer/:id', leerPost);
 router.post('/crear', crearPost);
 router.patch('/actualizar/:id', actualizarPost);
+router.delete('/borrar/:id', borrarPost);
 module.exports = router;

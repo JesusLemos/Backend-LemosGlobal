@@ -12,7 +12,7 @@ async function actualizarPost(req, res){
             }
 
         }).then(item =>{ 
-             item.update({comentario:post})
+             item.update({comentario:post});
             res.json({
                 message: 'Se ha actualizado correctamente'
             });
