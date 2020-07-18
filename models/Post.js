@@ -1,9 +1,9 @@
 'use strict';
 module.exports =(sequelize, DataTypes) => {
-    const Post = sequelize.define('Usuario', {
+    const Post = sequelize.define('Post', {
   
         id_usuario: {
-            type: DataTypes.BIGINT(8),
+            type: DataTypes.INTEGER(11),
             // allowNull: true,
             // validate: {
                 //   notNull: { msg: "El campo es requerido" },
@@ -20,7 +20,7 @@ module.exports =(sequelize, DataTypes) => {
             // },
         },
      } ,
- {tableName: 'Posts'});
+ {tableName: 'posts'});
     return Post;
 
 }
