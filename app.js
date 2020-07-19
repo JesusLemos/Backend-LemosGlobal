@@ -46,5 +46,5 @@ app.use(function(err, req, res, next) {
 
 //
 
-// db.sequelize.sync(); //sirve para crear las tablas de la BBDD
+db.sequelize.sync(); //sirve para crear las tablas de la BBDD
 module.exports = app;

@@ -1,10 +1,15 @@
 const db = require('../models');
+const bcrypt = require('bcryptjs');
+
+async function contrasenyaConHash(contrasenya){
+    return await bcrypt.hash(contrasenya, 10)
+}
 
 async function registroUsuario(req, res){
     try {
-        
+        req.body.contrasenia = await contrasenyaConHash(req.body.contrasenia);
         const usuario = req.body;
-        const crearUsuario = await db.Usuario.create(req.body).then(item =>{
+        const crearUsuario = await db.Usuario.create(usuario).then(item =>{
             res.status(200).json({
                 message:'Se ha creado correctamente'
             })

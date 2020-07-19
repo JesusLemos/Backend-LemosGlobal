@@ -18,6 +18,10 @@ module.exports = (sequelize, DataTypes) => {
             
             // },
         },
+        contrasenia: {
+            type: DataTypes.STRING(30),
+            allowNull:false
+        },
         num_telef: {
             type: DataTypes.BIGINT(8),
             
