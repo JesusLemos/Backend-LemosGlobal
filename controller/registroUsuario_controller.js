@@ -1,9 +1,6 @@
 const db = require('../models');
-const bcrypt = require('bcryptjs');
+const { contrasenyaConHash } = require('../servicios/autentificacion'); 
 
-async function contrasenyaConHash(contrasenya){
-    return await bcrypt.hash(contrasenya, 10)
-}
 
 async function registroUsuario(req, res){
     try {

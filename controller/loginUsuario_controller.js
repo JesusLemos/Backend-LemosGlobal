@@ -4,14 +4,7 @@ const jwt = require('jsonwebtoken');
 
 
 const conSecreta = process.env.JWT_SECRET || 'ADLSNVLSNDLKNVSDFT';
-
-async function crearJWT(data){
-    return jwt.sign(data, conSecreta);
-}
-async function compararContrasenia(contrasenia, hash){
-    console.log(contrasenia, hash)
-    return await bcrypt.compare(contrasenia, hash)
-}
+const { compararContrasenia, crearJWT} = require('../servicios/autentificacion');
 
 async function loginUsuario(req, res) {
     try {
