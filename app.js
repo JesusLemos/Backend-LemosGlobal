@@ -10,7 +10,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const postRouter = require('./routes/post');
-
+const usuarioRouter = require('./routes/usuario');
 var app = express();
 
 // view engine setup
@@ -26,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/post', postRouter);
+app.use('/usuario', usuarioRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -45,5 +46,5 @@ app.use(function(err, req, res, next) {
 
 //
 
-// db.sequelize.sync(); //sirve para crear las tablas de la BBDD
+db.sequelize.sync(); //sirve para crear las tablas de la BBDD
 module.exports = app;
