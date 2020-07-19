@@ -3,13 +3,24 @@ module.exports =(sequelize, DataTypes) => {
     const Post = sequelize.define('Post', {
   
         id_usuario: {
-            type: DataTypes.INTEGER(11),
+            
+              type: DataTypes.INTEGER(11),
+            //   index:true,
+            //   references: {
+            //       model: 'persons',
+            //       key: 'id'
+            //   },
+            //   onDelete: true,
+
+            },
+            
+            
             // allowNull: true,
             // validate: {
                 //   notNull: { msg: "El campo es requerido" },
                 
                 // },
-            },
+            
             
             comentario: {
                 type: DataTypes.STRING(100),
@@ -22,6 +33,7 @@ module.exports =(sequelize, DataTypes) => {
      } ,
  {tableName: 'posts'});
  Post.associate = (models) => {
+    //  Post.belongsTo(models.Usuario)
     // Post.hasMany(models.Post, {foreignKey: 'id_Post'});
     Post.belongsToMany(models.Usuario , { through: models.Like })
    //  Producto.hasMany(models.Pedido, {foreignKey: 'producto_id'});
