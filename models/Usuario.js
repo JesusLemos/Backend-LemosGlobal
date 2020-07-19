@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
             // },
         },
         contrasenia: {
-            type: DataTypes.STRING(30),
+            type: DataTypes.STRING(150),
             allowNull:false
         },
         num_telef: {
